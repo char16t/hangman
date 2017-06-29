@@ -39,7 +39,7 @@ public final class Game {
         final Scanner scanner = new Scanner(this.input);
         int counter = 0;
         try (final PrintStream out = new PrintStream(this.output)) {
-            while (counter < this.mistakes || this.word.opened()) {
+            while (counter < this.mistakes && !this.word.opened()) {
                 out.print("Guess a letter: ");
                 char chr = scanner.next().charAt(0);
                 if (!this.word.contains(chr) || this.word.visible(chr)) {
